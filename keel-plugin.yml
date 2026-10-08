@@ -1,0 +1,21 @@
+# The plugin's manifest. Draft: the code still lives in keel-v2, so nothing is released yet.
+# Format: https://github.com/MiladNalbandi/keel-v2/tree/main/docs/plugins/02-plugin-package.md
+schema: 1
+name: git
+title: "Git"
+version: 0.0.0
+publisher: keel
+summary: "The Git panel, git actions for flows and git tools for agents. Agents read git; a person presses Commit and Push. keel's core keeps the git basics that flows need."
+repo: https://github.com/MiladNalbandi/keel-plugin-git
+license: MIT
+
+requires:
+  sdk: 1
+  plugins:
+    code: ">=0.1.0"
+
+parts:
+  engine: { path: engine, package: keel_plugin_git }
+  api: { jars: [api/keel-plugin-git.jar] }
+  web: { entry: web/index.js }
+  content: content
